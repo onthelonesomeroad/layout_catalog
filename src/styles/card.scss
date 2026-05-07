@@ -5,11 +5,14 @@
   width: $card-width;
   height: $card-height;
 
-  border: 1px solid rgba(243, 243, 243, 1);
+  border: 1px solid $card-border;
   border-radius: 5px;
 
   padding-top: 32px;
   padding-inline: 16px;
+
+  transition: transform 300ms;
+  transition-timing-function: linear;
 
   &__image {
     height: 134px;
@@ -33,6 +36,8 @@
     width: 100%;
 
     margin-bottom: 4px;
+
+    transition: color 300ms;
   }
 
   &__code {
@@ -91,8 +96,8 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    background-color: rgba(0, 172, 220, 1);
-    border: 1px solid rgba(0, 172, 220, 1);
+    background-color: $button-color;
+    border: 1px solid $button-border;
     border-radius: 5px;
     height: 40px;
     width: 100%;
@@ -103,26 +108,24 @@
     font-family: Roboto, sans-serif;
     font-weight: 700;
     line-height: 16px;
-    color: rgba(255, 255, 255, 1);
+    color: $button-text;
     letter-spacing: 0;
     text-transform: uppercase;
 
     margin-bottom: 16px;
-  }
-  &__button:hover {
+
     transition: background-color 300ms;
     transition: color 300ms;
-    background-color: #fff;
+  }
+  &__button:hover {
+    background-color: $hover-button-color;
     color: $blue;
   }
 
   &:hover {
-    transition: transform 300ms;
-    transition-timing-function: linear;
     transform: scale(1.2);
 
     .card__title {
-      transform: color 300ms;
       color: $title-hover;
     }
   }
